@@ -28,8 +28,8 @@ signs data set:
 
 Here are two images from the training set. There are more examples in the ipython notebook. 
 
-![Sign 1][./examples/sign1.png]
-![Sign 2][examples/sign2.png]
+![Sign 1](https://raw.githubusercontent.com/schafer14/Traffic-Sign-Classifier/master/examples/sign1.png)
+![Sign 2](https://raw.githubusercontent.com/schafer14/Traffic-Sign-Classifier/master/examples/sign2.png)
 
 ### Design and Test a Model Architecture
 
@@ -69,8 +69,8 @@ Of the five legitimate pictures the network categorized each one correctly. The 
 
 Here are two German traffic signs that I found on the web:
 
-![Sign 3][examples/sign3.png]
-![Sign 4][examples/sign4.png]
+![Sign 3](https://raw.githubusercontent.com/schafer14/Traffic-Sign-Classifier/master/examples/sign3.png)
+![Sign 4](https://raw.githubusercontent.com/schafer14/Traffic-Sign-Classifier/master/examples/sign4.png)
 
 
 Here are the results of the prediction:
