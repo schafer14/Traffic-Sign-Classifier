@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 
 ### Data Set Summary & Exploration
 
-The dataset consists of just over 50,000 color images of 32x32 resolution categorized into 43 classes. Most classes had approximately 500 images while some classes had more then 2000 and others had just 180. Getting more images from the underrepresentative classes could be beneficial, alternativly those images could be altered to artificially create more data in under represented classes; however, that approach was not used in this project. 
+The dataset consists of just over 50,000 color images of 32x32 resolution categorized into 43 classes. Most classes had approximately 500 images while some classes had more then 2000 and others had just 180. Getting more images from the underrepresentative classes could be beneficial.
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -31,9 +31,16 @@ Here are two images from the training set. There are more examples in the ipytho
 ![Sign 1](https://raw.githubusercontent.com/schafer14/Traffic-Sign-Classifier/master/examples/sign1.png)
 ![Sign 2](https://raw.githubusercontent.com/schafer14/Traffic-Sign-Classifier/master/examples/sign2.png)
 
-### Design and Test a Model Architecture
+### Prerocessing 
 
 I did not convert the images to gray scale because color has meaning in traffic signs. Red is a regulatory, yellow is a warning, green is a guide... so using grayscale images is taking a way that information from the network. Instead I normalized each dimension of each pixel to the range (0.1, 0.9). 
+
+In addition to normalizing I generated fake data from underrepresented classes. For each class I created additional examples based on how under represented the
+class was. To generate the fake data I randomly selected an image operation from the set or rotation, shifting, or brightening. Then I selected a random value 
+to alter the image slightly. I then added this new image to the data set with the same class as the parent image. This ensured all data was roughly equally represented. It also increased the size of the dataset to just over 100,000 training images. 
+
+### Design and Test a Model Architecture
+
 
 My final model was based on the LeNet architecture with one additional convolutional layer and one additional fully connected layer. Along with that I used a drop out of 19% after each max pooling layer. I found that these two additions were incredibly beneficial to my validation accuracy
 
