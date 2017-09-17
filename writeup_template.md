@@ -33,11 +33,11 @@ Here are two images from the training set. There are more examples in the ipytho
 
 ### Prerocessing 
 
-My first thought was to  not convert images to gray scale because colors on signs have meaning. I was recommended to convert to gray scale as a preprocessing step. After converting to gray scale my accuracy dropped by about 1% on both validation and testing data. After converting to gray scale I normalized to the range (0.1, 0.9). In a real life example I would keep the images in color as my experiments showed increased accuracy with color images. 
-
-In addition to normalizing I generated fake data from underrepresented classes. For each class I created additional examples based on how under represented the
+I generated fake data from underrepresented classes. For each class I created additional examples based on how under represented the
 class was. To generate the fake data I randomly selected an image operation from the set or rotation, shifting, or brightening. Then I selected a random value 
 to alter the image slightly. I then added this new image to the data set with the same class as the parent image. This ensured all data was roughly equally represented. It also increased the size of the dataset to just over 100,000 training images. 
+
+After data augmentation I converted images to gray scale to speed up computation. I also normalized all values to the range (0.1, 0.9) so I did not need to worry about initializing my weights as much. 
 
 ### Design and Test a Model Architecture
 
@@ -46,7 +46,7 @@ My final model was based on the LeNet architecture with one additional convoluti
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
+| Input         		| 32x32x1 Grayscale image   							| 
 | Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6  				|
