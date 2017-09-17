@@ -87,3 +87,5 @@ Here are the results of the prediction:
 
 The model correctly classified all real images giving it an accuracy of 100%. I am not concerned about how well it preforms on fake data, but I just found that interesting. 
 
+When I tested on rough 12,000 previously unseen examples I achieved an accuracy of 94%. I ran this test at the very end and retrained the network so some all of
+my previous results use the weights trained from a previous run. Most of the data is fairly similar though. 
