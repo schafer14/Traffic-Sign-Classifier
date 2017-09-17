@@ -33,7 +33,7 @@ Here are two images from the training set. There are more examples in the ipytho
 
 ### Prerocessing 
 
-I did not convert the images to gray scale because color has meaning in traffic signs. Red is a regulatory, yellow is a warning, green is a guide... so using grayscale images is taking a way that information from the network. Instead I normalized each dimension of each pixel to the range (0.1, 0.9). 
+My first thought was to  not convert images to gray scale because colors on signs have meaning. I was recommended to convert to gray scale as a preprocessing step. After converting to gray scale my accuracy dropped by about 1% on both validation and testing data. After converting to gray scale I normalized to the range (0.1, 0.9). In a real life example I would keep the images in color as my experiments showed increased accuracy with color images. 
 
 In addition to normalizing I generated fake data from underrepresented classes. For each class I created additional examples based on how under represented the
 class was. To generate the fake data I randomly selected an image operation from the set or rotation, shifting, or brightening. Then I selected a random value 
